@@ -1,0 +1,59 @@
+:root {
+    --bg-caja: #d8efe6;
+    --border-caja: #5a8a7c;
+    --espaciado: 10px;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.grid-container {
+    display: grid;
+    gap: var(--espaciado);
+    
+    grid-template-areas: 
+        "area-a"
+        "area-b"
+        "area-c"
+        "area-d";
+
+    .caja {
+        background: var(--bg-caja);
+        border: 2px solid var(--border-caja);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        font-weight: bold;
+        min-height: 100px;
+    }
+
+    .a { grid-area: area-a; }
+    .b { grid-area: area-b; }
+    .c { grid-area: area-c; }
+    .d { grid-area: area-d; }
+}
+
+
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr 2fr;
+        grid-template-areas: 
+            "area-a area-a area-d"
+            "area-b area-c area-d";
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+            "area-a area-b area-c"
+            "area-d area-d area-d";
+    }
+}
