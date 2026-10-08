@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letrero Extintor</title>
+    <link rel="stylesheet" href="extintor.css">
+</head>
+<body>
+
+    <div class="letrero">
+        <div class="header">EXTINTOR</div>
+        <div class="subheader">USELO UNICAMENTE EN FUEGO CLASE</div>
+        
+        <div class="icons-container">
+            <!-- Triángulo Verde -->
+            <svg class="triangle-a" viewBox="0 0 100 100">
+                <polygon points="50,10 90,90 10,90" fill="none" stroke="var(--verde-clase)" stroke-width="8"/>
+                <text x="50" y="82" font-size="65" font-weight="bold" fill="var(--verde-clase)" text-anchor="middle" font-family="Arial">A</text>
+            </svg>
+            
+            <!-- Cuadro Azul (Aquí ocurrirá el evento) -->
+            <div class="blue-square" id="audio-trigger" title="Pasa el cursor para escuchar">
+                <svg viewBox="0 0 24 24">
+                    <path d="M15,4H9V5H15V4M15,6H9V7H15V6M16,8H8C7.4,8 7,8.4 7,9V20C7,20.6 7.4,21 8,21H16C16.6,21 17,20.6 17,20V9C17,8.4 16.6,8 16,8M12.5,18C12.5,18 10.5,16 10.5,14.5C10.5,13.4 11.4,12.5 12.5,12.5C13.6,12.5 14.5,13.4 14.5,14.5C14.5,16 12.5,18 12.5,18Z" />
+                </svg>
+            </div>
+        </div>
+        
+        <div class="materials">
+            SOLIDOS COMBUSTIBLES<br>
+            madera, papel,<br>
+            tela, basura<br>
+            cartones
+        </div>
+        
+        <div class="instructions">
+            <h2>METODO PARA UTILIZARLO</h2>
+            <ol>
+                <li>Sosténgalo en posición vertical.</li>
+                <li>Retire el seguro.</li>
+                <li>Oprima la palanca.</li>
+                <li>Dirija la descarga contra la base de la llama.</li>
+            </ol>
+        </div>
+        
+        <div class="stripes"></div>
+    </div>
+
+
+    <script>
+        const triggerArea = document.querySelector("#audio-trigger");
+        const audioEl = new Audio("fire_jutsu.mp3");
+        triggerArea.addEventListener("mouseenter", () => {
+            audioEl.play().catch(error => {
+                console.warn("La reproducción requiere interacción previa del usuario:", error);
+            });
+        });
+
+        triggerArea.addEventListener("mouseleave", () => {
+            audioEl.pause();
+            audioEl.currentTime = 0;
+        });
+    </script>
+</body>
+</html>
