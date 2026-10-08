@@ -1,0 +1,130 @@
+:root {
+    --rojo-extintor: #ce1f26;
+    --verde-clase: #1f7b3c;
+    --azul-clase: #244186;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.letrero {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 450px;
+    border: 1px solid #ccc;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-color: var(--rojo-extintor);
+    color: #ffffff;
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 900;
+    padding: 10px 0;
+    margin: 15px 15px 5px 15px;
+    letter-spacing: 1px;
+}
+
+.subheader {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.icons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.triangle-a {
+    width: 80px;
+    height: 80px;
+}
+
+.blue-square {
+    width: 90px;
+    height: 90px;
+    background-color: var(--azul-clase);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.blue-square:hover {
+    transform: scale(1.05);
+}
+
+.blue-square svg {
+    width: 60px;
+    height: 60px;
+    fill: #ffffff;
+}
+
+.materials {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    line-height: 1.3;
+    color: #111;
+}
+
+.instructions {
+    padding: 15px 30px;
+    margin-top: 15px;
+}
+
+.instructions h2 {
+    color: var(--azul-clase);
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+
+.instructions ol {
+    padding-left: 20px;
+    font-size: 1.05rem;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #222;
+}
+
+.instructions li {
+    margin-bottom: 2px;
+}
+
+.stripes {
+    height: 80px;
+    margin-top: 15px;
+    background: repeating-linear-gradient(
+        -45deg,
+        var(--rojo-extintor),
+        var(--rojo-extintor) 40px,
+        #ffffff 40px,
+        #ffffff 80px
+    );
+}
